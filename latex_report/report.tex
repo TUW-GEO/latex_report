@@ -1,0 +1,56 @@
+\documentclass[fontsize=11pt, bibliography=totocnumbered, oneside, toc=bibliographynumbered]{scrartcl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TO BE DEFINED MANUALLY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\projecttitle}{Insert project title here}
+\newcommand{\projectacronym}{Insert project acronym here}
+\newcommand{\grant}{Grant agreement No XXXXXX}
+\newcommand{\devname}{Deliverable XX}
+\newcommand{\docname}{Insert title of deliverable here}
+\newcommand{\doctitle}{Insert name of document here}
+\newcommand{\pdfauthor}{TU Wien, Department of Geodesy and Geoinformation}
+\newcommand{\pdftitle}{Insert name of pdf file here}
+% Defining color styles
+\newcommand{\sectionTitleBackground}{0.125,0.22,0.39}
+\newcommand{\subsectionTitleBackground}{0.74,0.84,0.93}
+\newcommand{\sectionTitleTextColor}{white}
+\newcommand{\subsectionTitleTextColor}{white}
+\newcommand{\subsubsectionTitleTextColor}{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{report_template}
+\input{acronyms}
+
+\begin{document}
+
+\input{title}
+
+\newpage
+\input{changelog}
+
+{\hypersetup{linkcolor=black}%
+\setcounter{tocdepth}{3}%
+\renewcommand\contentsname{Table of Contents}%
+\tableofcontents}
+
+\newpage
+\listoftables
+\listoffigures
+
+\newpage
+\printacronyms[include=abbrev,name=List of Acronyms]
+
+\newpage
+\input{main}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,reference}
+
+\newpage
+\begin{appendices}
+\input{appendix}
+\end{appendices}
+
+\end{document}

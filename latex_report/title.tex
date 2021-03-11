@@ -1,0 +1,31 @@
+\begin{titlepage} 
+  \thispagestyle{scrplain}
+
+  \begin{tikzpicture}[remember picture]
+    \node at (0, 0) {\includegraphics[scale=0.6]{./graphics/logo_project.png}};
+    \draw (2.9,-2) -- (2.9,2);
+    \node [right = 3.2cm, align=left, text width=9cm] {\Large \scshape \baselineskip=19pt \projecttitle \par};
+  \end{tikzpicture}
+
+  \vspace{3cm}
+
+  \begin{tikzpicture}[overlay]
+    \node [anchor=west, text width=18cm, text height=1.5cm] (a) at (-30mm, 0) {};
+    \node [right, text=black] (b) {\huge \bfseries \devname};
+    \node [below = 0.8cm, right, text=black] (c) {Version \vhCurrentVersion\ from \vhCurrentDate};
+  \end{tikzpicture}
+
+  \vspace{2.5cm}
+
+  \begin{tikzpicture}[overlay]
+    \node [draw, anchor=west, text width=18cm, text height=1.5cm, fill=sectionTitleBackground] (a) at (-30mm, 0) {};
+    \node [right, text=white, text width=14cm, align=left] (b) {\huge \bfseries \baselineskip=15pt \docname};
+  \end{tikzpicture}
+
+  \vfill
+
+  \begin{center} 
+    \includegraphics[width=\textwidth]{./graphics/logo_partners.png}
+  \end{center} 
+
+\end{titlepage}

@@ -1,0 +1,152 @@
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage{lastpage}
+\setlength{\parskip}{.5em}
+
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\usepackage[tablegrid,owncaptions]{vhistory}
+\renewcommand \vhAuthorColWidth{0.9\hsize}
+\renewcommand \vhChangeColWidth{1.1\hsize}
+\renewcommand{\vhhistoryname}{Change history}
+\renewcommand{\vhversionname}{Issue}
+
+% \usepackage[headsepline=0.4pt,footsepline=0.4pt]{scrlayer-scrpage}
+\usepackage{scrlayer-scrpage}
+
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+% \graphicspath{{./graphics/}{./png/}}
+
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=40mm,foot=12.5mm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[toc,page]{appendix}
+\usepackage{enumerate}
+\usepackage{cite}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{bbding}
+\usepackage[rgb,dvipsnames,table]{xcolor}
+
+% define code style
+\usepackage{listings}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                   % start line enumeration with line 1
+  numberfirstline=true
+  %frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  xleftmargin=2em,
+  framexleftmargin=1.5em,
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+}
+
+% Defining page style
+\pagestyle{scrheadings}
+
+\clearscrheadings
+\clearscrplain
+\clearscrheadfoot
+
+\renewcommand{\headfont}{\normalfont} 
+\lohead{\footnotesize \sffamily \doctitle}
+
+\lofoot{%
+\begin{minipage}{0.09\textwidth}%
+\includegraphics[scale=0.8]{graphics/logo_funding_agency.png}%
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}%
+\footnotesize \sffamily \projectacronym\\\grant%
+\end{minipage}}%
+
+\rofoot{\footnotesize \sffamily Page {\bfseries\thepage}~of {\bfseries\pageref{LastPage}}}
+
+% caption settings
+\usepackage{caption}
+\usepackage[super]{nth}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% hyperref settings
+\usepackage[unicode=true]{hyperref}
+\usepackage{breakurl}
+\hypersetup{breaklinks=true, pdfauthor=\pdfauthor, pdftitle=\pdftitle, colorlinks=true, citecolor=blue, urlcolor=blue, linkcolor=black, pdfborder={0 0 0}}
+
+% don't use monospace font for urls
+\urlstyle{same}
+
+% path bibliography so it has a label
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\list}{\label{bib}\list}{}{}
+
+\newcommand\dash{\nobreakdash-\hspace{0pt}}
+
+\usepackage[caption=false,font=normalsize]{subfig}
+\captionsetup[subfigure]{position=top,singlelinecheck=off,justification=raggedright}
+
+% Defining style of section titles
+\definecolor{sectionTitleBackground}{rgb}{\sectionTitleBackground}
+\colorlet{sectionTitleTextColor}{\sectionTitleTextColor}
+\definecolor{subsectionTitleBackground}{rgb}{\subsectionTitleBackground}
+\colorlet{subsectionTitleTextColor}{\subsectionTitleTextColor}
+\colorlet{subsubsectionTitleTextColor}{\subsubsectionTitleTextColor}
+
+\usepackage{tikz}
+
+\setkomafont{section}{\color{sectionTitleTextColor}%
+    \bfseries\Large
+    \begin{tikzpicture}[overlay]
+    \draw[fill=sectionTitleBackground] (-25mm, -5pt) rectangle (\textwidth,16.4pt);
+    \end{tikzpicture}}
+
+\setkomafont{subsection}{\color{subsectionTitleTextColor}%
+    \bfseries
+    \begin{tikzpicture}[overlay]
+    \draw[fill=subsectionTitleBackground] (-4pt,-5pt) rectangle (\linewidth,15.4pt);
+    \end{tikzpicture}}
+
+\setkomafont{subsubsection}{\color{subsubsectionTitleTextColor}%
+    \bfseries
+    \begin{tikzpicture}[overlay]
+    \draw[fill=subsectionTitleBackground!50!white,draw=white] (-4pt,-5pt) rectangle (\linewidth,15.4pt);
+    \end{tikzpicture}}
+
+\newenvironment{myenv}[1]{\mdfsetup{
+    frametitle={\color{sectionTitleBackground}\colorbox{white}{\space#1\space}},
+    innertopmargin=10pt,
+    frametitleaboveskip=-\ht\strutbox,
+    frametitlealignment=\center
+    }
+  \begin{mdframed}}{\end{mdframed}}
