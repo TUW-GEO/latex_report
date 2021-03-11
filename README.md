@@ -1,2 +1,3 @@
-# latex_report
-LaTeX template
+# LaTeX Report
+
+Report template written in LaTeX.
